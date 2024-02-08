@@ -3,12 +3,14 @@ const { REST, Routes } = require('discord.js');
 
 // hey.jsのmodule.exportsを呼び出します。
 const heyFile = require('./commands/hey.js');
+const hogetaFile = require('./commands/hogeta.js');
+const jankenFile = require('./commands/janken.js');
 
 // 環境変数としてapplicationId, guildId, tokenの3つが必要です
-const { applicationId, guildId, token } = require('./config.json');
+const { applicationId, guildId, token } = require('./config_.json');
 
 // 登録コマンドを呼び出してリスト形式で登録
-const commands = [heyFile.data.toJSON()];
+const commands = [heyFile.data.toJSON(),hogetaFile.data.toJSON(),jankenFile.data.toJSON()];
 
 // DiscordのAPIには現在最新のversion10を指定
 const rest = new REST({ version: '10' }).setToken(token);
